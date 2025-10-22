@@ -78,37 +78,51 @@ body::after {
   100% { transform: translate(-50%, -50%); }
 }
 
-/* ===== PAGE CONTENT ===== */
+/* ===== HEADER ===== */
 header {
-  background-color: rgba(0, 120, 215, 0.8);
+  background-color: #000000;
   color: white;
   padding: 40px 0;
   text-align: center;
-  box-shadow: 0 0 20px rgba(0,120,215,0.6);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+}
+header h1 {
+  font-size: 2.2em;
+  margin: 0;
+}
+header img {
+  width: auto;
+  height: auto;
+  max-width: 50px;
+  max-height: 50px;
 }
 
+/* ===== NAVIGATION ===== */
 nav {
-  background-color: rgba(0, 95, 163, 0.8);
-  padding: 10px;
+  background-color: rgba(7, 7, 7, 0.8);
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 0 15px rgba(0,95,163,0.5);
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
 }
+
 nav a {
   color: white;
   text-decoration: none;
-  margin: 10px;
+  margin: 10px 15px;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 1.1em;
 }
+
 nav a:hover {
   text-decoration: underline;
 }
 
+/* ===== MAIN CONTENT ===== */
 main {
   padding: 40px 20px;
   max-width: 600px;
   margin: 60px auto;
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.6);
   backdrop-filter: blur(6px);
@@ -150,18 +164,19 @@ button {
   margin: 20px auto 0;
 }
 button:hover {
-  background-color: #005fa3;
+  background-color: #111111;
   transform: scale(1.05);
 }
 
+/* ===== FOOTER ===== */
 footer {
-  background-color: rgba(0, 120, 215, 0.8);
+  background-color: rgba(7, 7, 7, 0.9);
   color: white;
   text-align: center;
   padding: 15px 0;
   margin-top: 60px;
   width: 100%;
-  box-shadow: 0 0 15px rgba(0,120,215,0.6);
+  box-shadow: 0 0 15px rgba(5, 5, 5, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,7 +189,7 @@ footer {
 <!-- TWINKLING STARS -->
 <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
 <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-<div class as="star"></div><div class="star"></div>
+<div class="star"></div><div class="star"></div>
 
 <header>
   <h1>Contact Us</h1>
@@ -208,4 +223,3 @@ footer {
 
 </body>
 </html>
-

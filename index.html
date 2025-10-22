@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -13,8 +13,8 @@ body {
   padding: 0;
   color: #fff;
   overflow-x: hidden;
-  height: 100vh;
-  background-color:#000000; /* Deep black like outer space */
+  min-height: 100vh;
+  background-color: #000000;
 }
 
 /* Layer 1: Nebula gradient glow */
@@ -57,22 +57,9 @@ body::after {
   z-index: -1;
 }
 
-/* Many star positions */
+/* Star positions */
 .star:nth-child(1) { top: 10%; left: 20%; width: 3px; height: 3px; animation-delay: 0s; }
 .star:nth-child(2) { top: 40%; left: 70%; width: 3px; height: 3px; animation-delay: 1s; }
-.star:nth-child(3) { top: 80%; left: 50%; width: 2px; height: 2px; animation-delay: 0.5s; }
-.star:nth-child(4) { top: 25%; left: 90%; width: 3px; height: 3px; animation-delay: 1.5s; }
-.star:nth-child(5) { top: 60%; left: 10%; width: 3px; height: 3px; animation-delay: 2s; }
-.star:nth-child(6) { top: 15%; left: 45%; width: 2px; height: 2px; animation-delay: 1.2s; }
-.star:nth-child(7) { top: 55%; left: 80%; width: 3px; height: 3px; animation-delay: 2.5s; }
-.star:nth-child(8) { top: 75%; left: 30%; width: 2px; height: 2px; animation-delay: 3s; }
-.star:nth-child(9) { top: 5%; left: 60%; width: 4px; height: 4px; animation-delay: 0.8s; }
-.star:nth-child(10) { top: 85%; left: 85%; width: 3px; height: 3px; animation-delay: 4s; }
-.star:nth-child(11) { top: 33%; left: 15%; width: 3px; height: 3px; animation-delay: 1.8s; }
-.star:nth-child(12) { top: 50%; left: 25%; width: 2px; height: 2px; animation-delay: 2.8s; }
-.star:nth-child(13) { top: 70%; left: 60%; width: 3px; height: 3px; animation-delay: 3.5s; }
-.star:nth-child(14) { top: 90%; left: 45%; width: 3px; height: 3px; animation-delay: 4.5s; }
-.star:nth-child(15) { top: 20%; left: 75%; width: 3px; height: 3px; animation-delay: 1.7s; }
 
 @keyframes galaxyMove {
   0% { background-position: 0% 0%; }
@@ -86,44 +73,32 @@ body::after {
 
 /* ===== HEADER WITH LOGO ===== */
 header {
-  background-color: rgba(0, 120, 215, 0.8);
-  color: white;
-  padding: 20px 50px;
-  box-shadow: 0 0 20px rgba(0,120,215,0.6);
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  background-color: #000000;
+  padding: 10px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  text-align: center;
 }
 
 .logo {
-  height: 70px; /* adjust logo size */
-  width: auto;
-  margin-right: 20px;
-}
-
-header h1 {
-  color: #ffffff;
-  font-size: 28px;
-  margin: 0;
+  width: 40%;
+  max-width: 400px;
+  height: auto;
 }
 
 /* ===== NAVIGATION ===== */
 nav {
-  background-color: rgba(0, 95, 163, 0.8);
-  padding: 30px;
+  background-color: rgba(7, 7, 7, 0.8);
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 0 35px rgba(0,95,163,0.5);
+  box-shadow: 0 0 35px rgba(8, 8, 8, 0.5);
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 15px;
+  margin: 10px 15px;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 1.1em;
 }
 
 nav a:hover {
@@ -158,16 +133,66 @@ p {
 
 /* ===== FOOTER ===== */
 footer {
-  background-color: rgba(0, 120, 215, 0.8);
+  background-color: rgba(7, 7, 7, 0.8);
   color: white;
   text-align: center;
-  padding: 15px 0;
+  padding: 15px 10px;
   margin-top: 40px;
   width: 100%;
-  box-shadow: 0 0 15px rgba(0,120,215,0.6);
+  box-shadow: 0 0 15px rgba(5, 5, 5, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 0.9em;
+  flex-wrap: wrap;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .logo {
+    width: 70%;
+  }
+
+  nav {
+    padding: 15px;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px 0;
+    font-size: 1em;
+  }
+
+  main {
+    padding: 20px;
+    margin: 20px 10px;
+  }
+
+  p {
+    text-indent: 30px;
+    font-size: 1em;
+  }
+
+  footer {
+    flex-direction: column;
+    font-size: 0.8em;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 85%;
+  }
+
+  nav a {
+    font-size: 0.95em;
+  }
+
+  p {
+    font-size: 0.95em;
+    text-indent: 20px;
+  }
 }
 </style>
 </head>
@@ -177,15 +202,11 @@ footer {
 <!-- TWINKLING STARS -->
 <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
 <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-<div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-<div class="star"></div><div class="star"></div><div class="star"></div>
+<div class="star"></div><div class="star"></div>
 
-<!-- ===== HEADER WITH LOGO AND TITLE ===== -->
+<!-- ===== HEADER WITH LOGO ===== -->
 <header>
-  <div class="header-container">
-    <img src="your-logo.png" alt="Vertext Logo" class="logo">
-    <h1>Vertext Document Facilitation Services</h1>
-  </div>
+  <img src="Vertext.png" alt="Vertext Document Facilitation Services Logo" class="logo">
 </header>
 
 <!-- ===== NAVIGATION ===== -->
@@ -253,9 +274,10 @@ footer {
         <a href="about.html" class="button">Learn More About Us</a>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Vertext Document Facilitation Services | All Rights Reserved</p>
-    </footer>
+    <!-- ===== FOOTER ===== -->
+<footer>
+  © 2025 Vertext Document Facilitation Services. All rights reserved.
+</footer>
 
 </body>
 </html>
