@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Vertext Document Facilitation Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Vertext.png" alt="Vertext Logo" class="logo-img" />
+      <div class="logo-text">
+        <h1>Vertext</h1>
+        <p>Document Facilitation Services</p>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about-hero">
+    <h2>About Vertext</h2>
+
+    <p class="intro">
+      We specialize in providing <strong>accurate, timely, and comprehensive medical record reviews</strong> that help attorneys, insurers, and healthcare professionals make well-informed and confident decisions. 
+      Our mission is to simplify the complexity of medical data by delivering clear, precise, and fully verified information that supports case analysis, insurance evaluations, and healthcare assessments.
+    </p>
+
+    <p class="intro">
+      At Vertext Document Facilitation Services, we understand that every document tells a story — one that must be analyzed with care, confidentiality, and expertise. 
+      Our dedicated team of clinical professionals and documentation specialists works together to ensure that each medical record is reviewed thoroughly, with every detail evaluated for accuracy, consistency, and completeness. 
+      This meticulous approach allows us to identify patterns, uncover key medical insights, and eliminate inconsistencies that could affect the clarity of your case or report.
+    </p>
+
+    <p class="intro">
+      Using a combination of <strong>clinical expertise</strong> and <strong>advanced technology</strong>, we transform hundreds of pages of medical information into structured, easy-to-understand summaries that are both comprehensive and efficient. 
+      Whether it’s for litigation support, claims assessment, or patient care evaluation, our team ensures that every report we deliver meets the highest standards of quality and reliability. 
+      We believe that accuracy isn’t just a requirement — it’s our responsibility to the clients who trust us with their most sensitive data.
+    </p>
+
+    <p class="intro">
+      Beyond accuracy, we value <strong>confidentiality and professionalism</strong> above all else. 
+      Every document we handle is treated with the utmost respect for privacy and security, following strict data protection protocols and ethical review processes. 
+      Our systems are designed to ensure that sensitive client information remains secure, traceable, and accessible only to authorized personnel. 
+      We understand the importance of discretion, especially in legal and healthcare settings, and we operate with complete integrity in all our practices.
+    </p>
+
+    <p class="intro">
+      Our process involves several stages of review — from data collection and organization to medical analysis and final report generation. 
+      Each stage is guided by a commitment to precision, transparency, and efficiency. 
+      Our reviewers collaborate closely with legal and insurance teams to understand their unique objectives, ensuring that the final output aligns perfectly with the requirements of every case or claim.
+    </p>
+
+    <p class="intro">
+      What sets Vertext apart is our focus on <strong>innovation</strong>. 
+      We continuously adopt modern tools and digital technologies to improve speed, accuracy, and accessibility. 
+      From AI-assisted data extraction to secure cloud documentation systems, our workflow is designed to minimize manual error while enhancing productivity and consistency. 
+      This integration of technology and human expertise allows us to maintain exceptional quality without compromising efficiency.
+    </p>
+
+    <p class="intro">
+      As part of our vision, we aim to become a trusted partner to every client we serve — providing not just information, but insight. 
+      We help transform complex medical data into actionable knowledge that drives better decision-making, stronger legal strategies, and more reliable healthcare outcomes. 
+      Each report we produce reflects our dedication to clarity, credibility, and client satisfaction.
+    </p>
+
+    <p class="intro">
+      Whether you are an attorney preparing for litigation, an insurance professional verifying claims, or a healthcare provider reviewing patient histories, Vertext Document Facilitation Services is here to support you. 
+      With a balance of compassion, precision, and expertise, we turn complexity into clarity — helping you see the full picture with confidence and peace of mind.
+    </p>
+
+    <p class="intro">
+      <strong>At Vertext, every detail matters — because every decision matters.</strong>
+    </p>
+  </section>
+
+  <section class="about-content">
+    <h3>Our Mission</h3>
+    <p>
+      “Our mission is to deliver comprehensive, accurate, and timely medical record review services by combining clinical expertise, advanced technology, and a commitment to quality. We aim to support attorneys, insurers, and healthcare professionals in making well-informed decisions with clarity and confidence.”
+    </p>
+
+    <h3>Our Vision</h3>
+    <p>
+      “To be the most trusted and innovative provider of accurate, efficient, and ethical medical record review services — empowering informed decisions that improve patient outcomes and support justice and transparency in healthcare.”
+    </p>
+
+    <h3>Our Values</h3>
+    <ul>
+      <li>Integrity: Upholding confidentiality and ethical standards in every review.</li>
+      <li>Accuracy: Ensuring every detail is verified and clearly documented.</li>
+      <li>Efficiency: Delivering reports promptly without compromising quality.</li>
+      <li>Collaboration: Working closely with clients to meet their unique needs.</li>
+      <li>Innovation: Adopting technology to enhance quality and consistency.</li>
+    </ul>
+  </section>
+
+  <!-- 🌟 FLOATING BUTTON ADDED HERE -->
+<a href="contact.html" class="floating-envelope" title="Message Us">
+  <div class="envelope">
+    <div class="flap"></div>
+    <div class="letter">
+      <span>Contact Us</span>
+    </div>
+  </div>
+</a>
+
+
+
+<div class="transition-slide"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const transition = document.querySelector(".transition-slide");
+
+  // Fade in new page
+  setTimeout(() => body.classList.add("fade-in"), 50);
+
+  // Handle smooth transitions between pages
+  document.querySelectorAll("a").forEach(link => {
+    if (link.href && link.href.includes(".html")) {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const target = e.currentTarget.href;
+
+        body.classList.remove("fade-in");
+        body.classList.add("slide-out");
+
+        transition.style.transform = "translateX(0)";
+        transition.style.opacity = "1";
+
+        setTimeout(() => {
+          window.location.href = target;
+        }, 800); // match CSS transition duration
+      });
+    }
+  });
+});
+</script>
+
+
+  <footer>
+    <p>© 2025 Vertext Document Facilitation Services. All rights reserved.</p>
+  </footer>
+</body>
+</html>
