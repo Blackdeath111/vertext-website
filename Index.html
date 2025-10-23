@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vertext Document Facilitation Services</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Vertext.png" alt="Vertext Logo" class="logo-img" />
+      <div class="logo-text">
+        <h1>Vertext</h1>
+        <p>Document Facilitation Services</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>We Simplify Your Paperwork</h2>
+      <p>
+        Vertext Document Facilitation Services helps you process, verify, and deliver
+        important documents quickly and securely — so you can focus on what matters most.
+      </p>
+      <a href="contact.html" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Comprehensive Document Review</h3>
+        <p>
+          We carefully review every page of your documents to ensure accuracy,
+          completeness, and consistency. Our process helps identify errors or missing
+          details before submission, saving you time and avoiding costly delays.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Quality & Compliance Check</h3>
+        <p>
+          Each document is evaluated to meet required standards and guidelines. 
+          We verify information, check formatting, and ensure that all supporting
+          records meet organizational and legal requirements.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Final Review & Organization</h3>
+        <p>
+          After thorough evaluation, we organize and prepare your reviewed documents
+          for easy reference and submission. Our team ensures that everything is 
+          ready, well-labeled, and properly structured for smooth processing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-choose">
+    <h2>Why Choose Vertext?</h2>
+    <ul>
+      <li>✔ Fast and reliable service</li>
+      <li>✔ Secure document handling</li>
+      <li>✔ Transparent pricing</li>
+      <li>✔ Trusted by hundreds of clients</li>
+    </ul>
+  </section>
+
+  <!-- 🌟 FLOATING BUTTON ADDED HERE -->
+<a href="contact.html" class="floating-envelope" title="Message Us">
+  <div class="envelope">
+    <div class="flap"></div>
+    <div class="letter">
+      <span><strong>Contact Us</strong></span>
+    </div>
+  </div>
+</a>
+
+
+
+
+<div class="transition-slide"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const transition = document.querySelector(".transition-slide");
+
+  // Fade in new page
+  setTimeout(() => body.classList.add("fade-in"), 50);
+
+  // Handle smooth transitions between pages
+  document.querySelectorAll("a").forEach(link => {
+    if (link.href && link.href.includes(".html")) {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const target = e.currentTarget.href;
+
+        body.classList.remove("fade-in");
+        body.classList.add("slide-out");
+
+        transition.style.transform = "translateX(0)";
+        transition.style.opacity = "1";
+
+        setTimeout(() => {
+          window.location.href = target;
+        }, 800); // match CSS transition duration
+      });
+    }
+  });
+});
+</script>
+
+
+
+
+  <footer>
+    <p>© 2025 Vertext Document Facilitation Services. All rights reserved.</p>
+  </footer>
+</body>
+</html>

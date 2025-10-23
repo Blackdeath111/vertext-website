@@ -1,282 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | Vertext Document Facilitation Services</title>
-
-<style>
-/* ===== COSMIC SPACE BACKGROUND ===== */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  overflow-x: hidden;
-  min-height: 100vh;
-  background-color: #000000; /* Deep black */
-}
-
-/* Layer 1: Nebula gradient glow */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.25), transparent 60%),
-              radial-gradient(circle at 80% 80%, rgba(64, 118, 219, 0.25), transparent 60%),
-              radial-gradient(circle at 50% 50%, rgba(7, 82, 221, 0.15), transparent 70%);
-  animation: galaxyMove 50s ease-in-out infinite alternate;
-  z-index: -3;
-}
-
-/* Layer 2: moving small stars texture */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 400%; height: 400%;
-  background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-  opacity: 1;
-  animation: starsMove 120s linear infinite;
-  z-index: -2;
-}
-
-/* ===== TWINKLING STARS ===== */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
-.star {
-  position: fixed;
-  background: white;
-  border-radius: 70%;
-  opacity: 0.9;
-  box-shadow: 0 0 8px 4px rgba(255,255,255,0.9);
-  animation: twinkle 4s infinite ease-in-out;
-  z-index: -1;
-}
-
-/* Random stars */
-.star:nth-child(1) { top: 10%; left: 20%; width: 3px; height: 3px; animation-delay: 0s; }
-.star:nth-child(2) { top: 40%; left: 70%; width: 3px; height: 3px; animation-delay: 1s; }
-.star:nth-child(3) { top: 80%; left: 50%; width: 2px; height: 2px; animation-delay: 0.5s; }
-.star:nth-child(4) { top: 25%; left: 90%; width: 3px; height: 3px; animation-delay: 1.5s; }
-.star:nth-child(5) { top: 60%; left: 10%; width: 3px; height: 3px; animation-delay: 2s; }
-
-@keyframes galaxyMove {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
-}
-
-@keyframes starsMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-50%, -50%); }
-}
-
-/* ===== HEADER ===== */
-header {
-  background-color: #000000;
-  color: white;
-  padding: 60px 0;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(2, 2, 2, 0.8);
-}
-
-header h1 {
-  font-size: 2.2em;
-  margin: 0;
-}
-
-/* ===== NAVIGATION ===== */
-nav {
-  background-color: rgba(7, 7, 7, 0.8);
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 10px 15px;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* ===== MAIN CONTENT ===== */
-main {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 40px auto;
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.6);
-  backdrop-filter: blur(6px);
-}
-
-h2, h3 {
-  color: #e5e9ec;
-  text-align: center;
-}
-
-h3 {
-  font-size: 1.3em;
-  margin-top: 30px;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.8;
-  text-align: justify;
-  text-indent: 50px;
-  margin: 20px auto;
-  max-width: 850px;
-  color: #ffffff;
-}
-
-ul {
-  margin-left: 70px;
-  line-height: 1.7;
-  color: #ffffff;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background-color: rgba(7, 7, 7, 0.8);
-  color: white;
-  text-align: center;
-  padding: 15px 10px;
-  margin-top: 40px;
-  width: 100%;
-  box-shadow: 0 0 15px rgba(5, 5, 5, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.9em;
-  flex-wrap: wrap;
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 768px) {
-  header {
-    padding: 40px 0;
-  }
-
-  header h1 {
-    font-size: 1.8em;
-  }
-
-  nav {
-    padding: 15px;
-  }
-
-  nav a {
-    display: block;
-    margin: 8px 0;
-    font-size: 1em;
-  }
-
-  main {
-    padding: 25px 15px;
-    margin: 25px 10px;
-  }
-
-  p {
-    font-size: 1em;
-    text-indent: 30px;
-  }
-
-  ul {
-    margin-left: 30px;
-  }
-
-  footer {
-    flex-direction: column;
-    font-size: 0.85em;
-    padding: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.6em;
-  }
-
-  nav a {
-    font-size: 0.95em;
-  }
-
-  p {
-    font-size: 0.95em;
-    text-indent: 20px;
-  }
-
-  ul {
-    margin-left: 20px;
-  }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Vertext Document Facilitation Services</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <header>
+    <div class="logo">
+      <img src="Vertext.png" alt="Vertext Logo" class="logo-img" />
+      <div class="logo-text">
+        <h1>Vertext</h1>
+        <p>Document Facilitation Services</p>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<!-- TWINKLING STARS -->
-<div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-<div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
-<div class="star"></div><div class="star"></div>
+  <section class="about-hero">
+    <h2>About Vertext</h2>
 
-<header>
-  <h1>About Us</h1>
-</header>
+    <p class="intro">
+      We specialize in providing <strong>accurate, timely, and comprehensive medical record reviews</strong> that help attorneys, insurers, and healthcare professionals make well-informed and confident decisions. 
+      Our mission is to simplify the complexity of medical data by delivering clear, precise, and fully verified information that supports case analysis, insurance evaluations, and healthcare assessments.
+    </p>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
+    <p class="intro">
+      At Vertext Document Facilitation Services, we understand that every document tells a story — one that must be analyzed with care, confidentiality, and expertise. 
+      Our dedicated team of clinical professionals and documentation specialists works together to ensure that each medical record is reviewed thoroughly, with every detail evaluated for accuracy, consistency, and completeness. 
+      This meticulous approach allows us to identify patterns, uncover key medical insights, and eliminate inconsistencies that could affect the clarity of your case or report.
+    </p>
 
-<main>
-  <h2>Our Mission</h2>
-  <p>
-    Our mission is to deliver comprehensive, accurate, and timely medical record review services by combining clinical expertise, advanced technology, and a commitment to quality. 
-    We aim to support attorneys, insurers, and healthcare professionals in making well-informed decisions with clarity and confidence.
-  </p>
+    <p class="intro">
+      Using a combination of <strong>clinical expertise</strong> and <strong>advanced technology</strong>, we transform hundreds of pages of medical information into structured, easy-to-understand summaries that are both comprehensive and efficient. 
+      Whether it’s for litigation support, claims assessment, or patient care evaluation, our team ensures that every report we deliver meets the highest standards of quality and reliability. 
+      We believe that accuracy isn’t just a requirement — it’s our responsibility to the clients who trust us with their most sensitive data.
+    </p>
 
-  <h3>Key Points</h3>
-  <ul>
-    <li>Focus on accuracy and timeliness</li>
-    <li>Use of clinical expertise and technology</li>
-    <li>Serving attorneys, insurers, and healthcare providers</li>
-    <li>Supporting informed decisions</li>
-  </ul>
+    <p class="intro">
+      Beyond accuracy, we value <strong>confidentiality and professionalism</strong> above all else. 
+      Every document we handle is treated with the utmost respect for privacy and security, following strict data protection protocols and ethical review processes. 
+      Our systems are designed to ensure that sensitive client information remains secure, traceable, and accessible only to authorized personnel. 
+      We understand the importance of discretion, especially in legal and healthcare settings, and we operate with complete integrity in all our practices.
+    </p>
 
-  <h2>Our Vision</h2>
-  <p>
-    We simplify complex medical data through expert review and technology-driven insights — ensuring accuracy, clarity, and confidence in every case. Our team carefully analyzes extensive medical documentation, transforming it into clear, structured, and meaningful summaries that empower attorneys, insurers, and healthcare professionals to make informed decisions. By combining clinical expertise with the latest innovations in data management and reporting, we bridge the gap between raw medical information and actionable understanding. Every report we deliver reflects our dedication to precision, confidentiality, and reliability — helping our clients navigate even the most intricate medical and legal challenges with confidence.
-  </p>
+    <p class="intro">
+      Our process involves several stages of review — from data collection and organization to medical analysis and final report generation. 
+      Each stage is guided by a commitment to precision, transparency, and efficiency. 
+      Our reviewers collaborate closely with legal and insurance teams to understand their unique objectives, ensuring that the final output aligns perfectly with the requirements of every case or claim.
+    </p>
 
-  <h2>Core Values</h2>
-  <ul>
-    <li><strong>Integrity:</strong> Upholding confidentiality and ethical standards in every review.</li>
-    <li><strong>Accuracy:</strong> Ensuring every detail is verified and clearly documented.</li>
-    <li><strong>Efficiency:</strong> Delivering reports promptly without compromising quality.</li>
-    <li><strong>Collaboration:</strong> Working closely with clients to meet their unique needs.</li>
-    <li><strong>Innovation:</strong> Adopting technology to enhance quality and consistency.</li>
-  </ul>
-</main>
+    <p class="intro">
+      What sets Vertext apart is our focus on <strong>innovation</strong>. 
+      We continuously adopt modern tools and digital technologies to improve speed, accuracy, and accessibility. 
+      From AI-assisted data extraction to secure cloud documentation systems, our workflow is designed to minimize manual error while enhancing productivity and consistency. 
+      This integration of technology and human expertise allows us to maintain exceptional quality without compromising efficiency.
+    </p>
 
-<footer>
-    <p>&copy; 2025 Vertext Document Facilitation Services | All Rights Reserved</p>
-</footer>
+    <p class="intro">
+      As part of our vision, we aim to become a trusted partner to every client we serve — providing not just information, but insight. 
+      We help transform complex medical data into actionable knowledge that drives better decision-making, stronger legal strategies, and more reliable healthcare outcomes. 
+      Each report we produce reflects our dedication to clarity, credibility, and client satisfaction.
+    </p>
 
+    <p class="intro">
+      Whether you are an attorney preparing for litigation, an insurance professional verifying claims, or a healthcare provider reviewing patient histories, Vertext Document Facilitation Services is here to support you. 
+      With a balance of compassion, precision, and expertise, we turn complexity into clarity — helping you see the full picture with confidence and peace of mind.
+    </p>
+
+    <p class="intro">
+      <strong>At Vertext, every detail matters — because every decision matters.</strong>
+    </p>
+  </section>
+
+  <section class="about-content">
+    <h3>Our Mission</h3>
+    <p>
+      “Our mission is to deliver comprehensive, accurate, and timely medical record review services by combining clinical expertise, advanced technology, and a commitment to quality. We aim to support attorneys, insurers, and healthcare professionals in making well-informed decisions with clarity and confidence.”
+    </p>
+
+    <h3>Our Vision</h3>
+    <p>
+      “To be the most trusted and innovative provider of accurate, efficient, and ethical medical record review services — empowering informed decisions that improve patient outcomes and support justice and transparency in healthcare.”
+    </p>
+
+    <h3>Our Values</h3>
+    <ul>
+      <li>Integrity: Upholding confidentiality and ethical standards in every review.</li>
+      <li>Accuracy: Ensuring every detail is verified and clearly documented.</li>
+      <li>Efficiency: Delivering reports promptly without compromising quality.</li>
+      <li>Collaboration: Working closely with clients to meet their unique needs.</li>
+      <li>Innovation: Adopting technology to enhance quality and consistency.</li>
+    </ul>
+  </section>
+
+  <!-- 🌟 FLOATING BUTTON ADDED HERE -->
+<a href="contact.html" class="floating-envelope" title="Message Us">
+  <div class="envelope">
+    <div class="flap"></div>
+    <div class="letter">
+      <span>Contact Us</span>
+    </div>
+  </div>
+</a>
+
+
+
+<div class="transition-slide"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const transition = document.querySelector(".transition-slide");
+
+  // Fade in new page
+  setTimeout(() => body.classList.add("fade-in"), 50);
+
+  // Handle smooth transitions between pages
+  document.querySelectorAll("a").forEach(link => {
+    if (link.href && link.href.includes(".html")) {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const target = e.currentTarget.href;
+
+        body.classList.remove("fade-in");
+        body.classList.add("slide-out");
+
+        transition.style.transform = "translateX(0)";
+        transition.style.opacity = "1";
+
+        setTimeout(() => {
+          window.location.href = target;
+        }, 800); // match CSS transition duration
+      });
+    }
+  });
+});
+</script>
+
+
+  <footer>
+    <p>© 2025 Vertext Document Facilitation Services. All rights reserved.</p>
+  </footer>
 </body>
 </html>
